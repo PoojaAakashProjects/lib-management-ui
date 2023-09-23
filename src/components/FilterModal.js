@@ -26,7 +26,6 @@ const FilterPopup = ({ isOpen,onRequestClose,applyFilter }) => {
         setAttribute(e.target.value);
     }
     const handleFilterRelation = (e) => {
-        debugger
         setRelation(e.target.value)
     }
     const handleFilterValue = (e) => {

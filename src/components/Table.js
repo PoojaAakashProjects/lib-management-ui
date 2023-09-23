@@ -41,7 +41,6 @@ const Table = (props) => {
 
     const fetchAllBooks = async () => {
         try {
-            debugger
             console.log('send filter data ',filterApplied)
             let url = `${process.env.REACT_APP_BACKEND_URL}/get-books-list?page=${page}&pageSize=${pageSize}`;
             let headers = {
