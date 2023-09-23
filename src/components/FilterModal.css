@@ -1,0 +1,31 @@
+select {
+    padding: 15px 5px 15px 5px;
+    border-radius: 10px;
+    border: 0.5px solid lightgray;
+    font-size: 20px;
+    width: 20%;
+}
+option {
+    font-size: 30px;
+}
+
+input {
+    padding: 15px 5px 15px 5px;
+    border-radius: 10px;
+    border: 0.5px solid lightgray;
+    width: 50%;
+}
+
+.filter-container {
+    display: flex;
+    gap: 20px;
+}
+
+.filter-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 15px;
+    margin-right: 70px;
+    gap: 45px;
+}

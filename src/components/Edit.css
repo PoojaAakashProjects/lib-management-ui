@@ -1,0 +1,41 @@
+/* .edit-popup{
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+    align-items: center;
+}
+
+input {
+    padding: 15px;
+    border-radius: 10px;
+    border: 0.5px solid lightgray;
+    
+} */
+.edit-popup {
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 500px;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+input {
+    padding: 15px 5px 15px 5px;
+    border-radius: 10px;
+    border: 0.5px solid lightgray;
+    width: 90%;
+    font-weight: 500;
+    font-size: large;
+}
+
+.edit-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 50px;
+}
