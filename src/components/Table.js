@@ -24,7 +24,7 @@ const Table = (props) => {
     const [pageSize, setPageSize] = useState(10);
     const [totalPages, setTotalPages] = useState(1);
     const [filterApplied,setFilterApplied] = useState({});
-    const [isFiltersApplied , setIsFiltersApplied] = useState(false)
+    const [isFiltersApplied , setIsFiltersApplied] = useState(false);
 
     const onFilterInputchange = (value) => {
         setFilterTitle(value);
@@ -57,11 +57,12 @@ const Table = (props) => {
             if (booksResponse.status === 200) {
                 setBooks(response.data);
                 setTotalPages(response.totalPages);
+                setDataFetched(true);
             }
 
 
         } catch (error) {
-            setDataFetched(true);
+           
         }
     }
 
@@ -198,7 +199,7 @@ const Table = (props) => {
                             </tr>
 
                             {
-                                books.length ?
+                              books !== undefined  &&
                                     books.filter((item) => {
                                         return filterByTitle === '' ? item : item.title.toLowerCase().includes(filterByTitle)
                                     }).
@@ -213,10 +214,18 @@ const Table = (props) => {
                                                     <td><button onClick={() => handleEdit(item.title, item.author, item.genre, item.publicationYear, item.bookId)}>Edit</button></td>
                                                 </tr>)
                                         })
-                                    :
-                                    <div style={{ fontSize: "50px", display: "flex", alignItem: "center" }}> <CircularProgress /></div>
+                                    
                             }
+                           
                         </table>
+                        {
+                            !dataFetched   &&
+                             <div style={{ fontSize: "50px", display: "flex", alignItem: "center",top:"50%" ,position: "absolute",left: "40%" }}> <CircularProgress /></div>
+                        }
+                         {
+                               dataFetched && books.length === 0 && 
+                                <div style={{ fontSize: "30px",top:"50%" ,position: "absolute",left: "40%"}}> <h4>No data to display</h4></div>
+                            }
                     </div>
                 </div>
             }
