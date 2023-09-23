@@ -31,7 +31,8 @@ const Table = (props) => {
     }
 
     const onFilterApply = (filterData) => {
-        setFilterApplied(filterData)
+        setFilterApplied(filterData);
+        setPage(1);
     }
 
     const handleClearFilters = () => {
@@ -187,6 +188,7 @@ const Table = (props) => {
                             handlePageChange={handlePageChange} page={page} totalPages={totalPages}
                             onFilterApply = {onFilterApply} handleClearFilters = {handleClearFilters}
                             isFiltersApplied={isFiltersApplied} setIsFiltersApplied ={setIsFiltersApplied}
+                            setTotalPages = {setTotalPages}
                         />
                         <table>
                             <tr className='table-header'>
